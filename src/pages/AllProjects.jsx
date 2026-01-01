@@ -25,7 +25,7 @@ const AllProjects = () => {
       description: 'Full-stack e-commerce solution with modern UI',
       image: '/image/ChatGPT Image Dec 2, 2025, 05_34_28 PM.png',
       color: 'purple',
-      github: 'https://github.com/45Eshant123/E-Commerce-Platform.git',
+      github: 'https://github.com/45Eshant123/E-Commerce-.git',
       category: 'web',
       tags: ['React', 'Node.js', 'MongoDB']
     },
