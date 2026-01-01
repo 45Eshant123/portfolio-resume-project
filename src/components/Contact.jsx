@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -14,8 +15,35 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
+
+    const params = {
+      name: formData.name,
+      email: formData.email,
+      time: new Date().toLocaleString(),
+      message: formData.message,
+    };
+
+    emailjs.send(
+      "service_0dgkqle",
+      "template_sfuybfg",
+      params,
+      "luuh6lkVfcuscxke_"
+    )
+    .then(() => {
+      toast({
+        title: "Message sent successfully!",
+        description: "I will get back to you soon.",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    })
+    .catch((error) => {
+      console.error(error);
+      toast({
+        title: "Failed to send message!",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
     });
   };
 
@@ -29,6 +57,8 @@ const Contact = () => {
   return (
     <section id="contact" className="min-h-screen flex items-center py-20 relative bg-gradient-to-b from-slate-900 to-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,6 +76,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
+        {/* Form Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,6 +85,8 @@ const Contact = () => {
           className="bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
+            
+            {/* Name */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                 Your Name
@@ -65,11 +98,12 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                placeholder="John Doe"
+                placeholder="Enter your name"
                 required
               />
             </div>
 
+            {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                 Email Address
@@ -81,11 +115,12 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                placeholder="john@example.com"
+                placeholder="Enter your email"
                 required
               />
             </div>
 
+            {/* Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                 Message
@@ -97,11 +132,12 @@ const Contact = () => {
                 onChange={handleChange}
                 rows={6}
                 className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
-                placeholder="Tell me about your project..."
+                placeholder="Write your message..."
                 required
               />
             </div>
 
+            {/* Submit Button */}
             <Button
               type="submit"
               className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50"
@@ -111,10 +147,11 @@ const Contact = () => {
             </Button>
           </form>
 
+          {/* Footer Contact Info */}
           <div className="mt-8 pt-8 border-t border-slate-700 flex flex-wrap justify-center gap-6">
-            <a href="mailto:hello@example.com" className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+            <a href="mailto:williamroger856@gmail.com" className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
               <Mail size={20} />
-              <span>hello@example.com</span>
+              <span>williamroger856@gmail.com</span>
             </a>
             <a href="#" className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors">
               <MessageSquare size={20} />

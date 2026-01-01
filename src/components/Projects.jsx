@@ -1,31 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import ElectricBorder from '@/components/ElectricBorder';
 import { useToast } from '@/components/ui/use-toast';
 
 const Projects = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const projects = [
     {
       title: '3D Portfolio',
       description: 'Interactive portfolio with Three.js and advanced animations',
-      image: 'https://horizons-cdn.hostinger.com/39c0e5a1-b51d-4de5-a939-b54dc96fc5ea/a8997bff8a64627a225421a9bb276adc.jpg',
+      image: '/image/portfolio.png',
       color: 'cyan',
       github: 'https://github.com/45Eshant123/port-folio.git'
     },
     {
       title: 'E-Commerce Platform',
       description: 'Full-stack e-commerce solution with modern UI',
-      image: 'Modern e-commerce dashboard with product cards',
+      image: '/image/ChatGPT Image Dec 2, 2025, 05_34_28 PM.png',
       color: 'purple',
       github: 'https://github.com/45Eshant123/E-Commerce-Platform.git'
     },
     {
       title: 'AI Dashboard',
       description: 'Data visualization dashboard with AI insights',
-      image: 'Futuristic AI analytics dashboard',
+      image: '/image/cards/ai-dashboard.png',
       color: 'blue',
       // No github link provided for this one, will handle gracefully
     }
@@ -71,18 +73,11 @@ const Projects = () => {
               <ElectricBorder color={project.color}>
                 <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl overflow-hidden h-full flex flex-col">
                   <div className="relative overflow-hidden h-48">
-                    {project.image.startsWith('http') ? (
-                      <img 
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                    ) : (
-                      <img 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        alt={project.title}
-                       src="https://images.unsplash.com/photo-1572177812156-58036aae439c" />
-                    )}
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                     
                     {/* Overlay Actions */}
@@ -140,6 +135,30 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* View All Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            onClick={() => navigate('/projects')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold rounded-full overflow-hidden shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all"
+            style={{ fontFamily: 'Orbitron, sans-serif' }}
+          >
+            <span className="relative z-10">View All My Projects</span>
+            <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" size={20} />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </motion.button>
+          <p className="text-gray-500 text-sm mt-4">
+            Explore my complete portfolio of projects
+          </p>
+        </motion.div>
       </div>
     </section>
   );

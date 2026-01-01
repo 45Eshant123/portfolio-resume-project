@@ -37,10 +37,10 @@ const Counter = ({ value, label, suffix = '' }) => {
 
 const Stats = () => {
   const stats = [
-    { label: 'Years Experience', value: 5, suffix: '+' },
-    { label: 'Projects Completed', value: 42, suffix: '' },
+    { label: 'Years Experience', value: 3, suffix: '+' },
+    { label: 'Projects Completed', value: 6, suffix: '' },
     { label: 'Happy Clients', value: 35, suffix: '+' },
-    { label: 'Awards Won', value: 8, suffix: '' }
+    { label: 'Awards Won', value: 2, suffix: '' }
   ];
 
   return (

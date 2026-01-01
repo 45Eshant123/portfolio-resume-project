@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Home from '@/pages/Home';
 import Blog from '@/pages/Blog';
 import BlogPost from '@/pages/BlogPost';
+import AllProjects from '@/pages/AllProjects';
 import RobotCharacter from '@/components/RobotCharacter';
 import { Toaster } from '@/components/ui/toaster';
 
@@ -20,6 +21,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<AllProjects />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
           </Routes>

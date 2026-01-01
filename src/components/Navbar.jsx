@@ -22,6 +22,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Don't update active section based on scroll if we're not on home page
       if (location.pathname !== '/') return;
 
       const sections = navItems.filter(i => i.type === 'scroll').map(item => item.id);
@@ -40,15 +41,28 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
-  // Set active section based on route if not on home
+  // Set active section based on current route
   useEffect(() => {
-    if (location.pathname.startsWith('/blog')) {
+    if (location.pathname === '/') {
+      // On home page, check scroll position or default to home
+      const sections = navItems.filter(i => i.type === 'scroll').map(item => item.id);
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 150 && rect.bottom >= 150;
+        }
+        return false;
+      });
+      setActiveSection(currentSection || 'home');
+    } else if (location.pathname.startsWith('/blog')) {
       setActiveSection('blog');
     }
-  }, [location]);
+  }, [location.pathname]);
 
   const handleNavClick = (item) => {
     if (item.type === 'route') {

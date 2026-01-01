@@ -8,7 +8,7 @@ const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Development', 'Design', '3D Graphics', 'Career'];
+  const categories = ['All', 'Development', 'Design', '3D Graphics', 'Career', 'Artificial Intelligence', 'Web Development', 'Web Design'];
 
   const posts = [
     {
@@ -17,8 +17,14 @@ const Blog = () => {
       excerpt: 'A comprehensive guide to building immersive 3D web experiences using React and Three.js.',
       category: '3D Graphics',
       readTime: '8 min',
-      date: 'Dec 15, 2023',
-      image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800&h=400'
+      date: 'Dec 15, 2025',
+      image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800&h=400',
+      resources: [
+        {
+          title: 'Three.js Tutorial Video',
+          url: 'https://youtu.be/KM64t3pA4fs?si=xV7EP57laHVXzZRa'
+        }
+      ]
     },
     {
       id: 2,
@@ -26,7 +32,7 @@ const Blog = () => {
       excerpt: 'How subtle animations can drastically improve user experience and engagement metrics.',
       category: 'Design',
       readTime: '5 min',
-      date: 'Dec 10, 2023',
+      date: 'Dec 10, 2025',
       image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800&h=400'
     },
     {
@@ -35,23 +41,68 @@ const Blog = () => {
       excerpt: 'Understanding the future of React rendering patterns and performance optimizations.',
       category: 'Development',
       readTime: '10 min',
-      date: 'Nov 28, 2023',
+      date: 'Nov 28, 2025',
       image: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&q=80&w=800&h=400'
     },
     {
       id: 4,
-      title: 'Building a Dev Portfolio',
-      excerpt: 'Tips and tricks for showcasing your work effectively to potential employers.',
-      category: 'Career',
-      readTime: '6 min',
-      date: 'Nov 15, 2023',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800&h=400'
+      title: 'AI Fake Media Detector – Deepfake Detection System',
+      excerpt: 'This AI system detects fake images, videos, and audio using CNN and Computer Vision.',
+      category: 'Artificial Intelligence',
+      readTime: '10 min',
+      date: 'Nov 20, 2024',
+      image: 'https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&q=80&w=800&h=400'
+    },
+    {
+      id: 5,
+      title: 'Full Stack E-Commerce Website – MERN Case Study',
+      excerpt: 'This MERN-based E-Commerce website includes product management, user authentication, cart system, and responsive UI.',
+      category: 'Web Development',
+      readTime: '9 min',
+      date: 'Dec 10, 2024',
+      image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800&h=400'
+    },
+    {
+      id: 6,
+      title: 'Personal Portfolio Website – Modern UI/UX Case Study',
+      excerpt: 'This project is my official portfolio website designed with modern animations, glassmorphism UI, and responsive layout.',
+      category: 'Web Design',
+      readTime: '7 min',
+      date: 'Jan 5, 2025',
+      image: 'https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?auto=format&fit=crop&q=80&w=800&h=400'
+    },
+    {
+      id: 7,
+      title: 'The Future of Web Development',
+      excerpt: 'A deep dive into upcoming trends like AI automation, edge rendering, and next-gen frameworks.',
+      category: 'Development',
+      readTime: 'Coming Soon',
+      date: 'Coming Soon',
+      image: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&q=80&w=800&h=400'
+    },
+    {
+      id: 8,
+      title: 'Building AI-Powered Web Apps',
+      excerpt: 'Understanding how AI features integrate into modern web applications and what tools enable them.',
+      category: 'Artificial Intelligence',
+      readTime: 'Coming Soon',
+      date: 'Coming Soon',
+      image: '/image/cards/ai poered web application.png'
+    },
+    {
+      id: 9,
+      title: 'Voice-Controlled Web Apps',
+      excerpt: 'Exploring voice input, speech recognition and how voice interfaces change user experience.',
+      category: 'Web Development',
+      readTime: 'Coming Soon',
+      date: 'Coming Soon',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400'
     }
   ];
 
   const filteredPosts = posts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = activeCategory === 'All' || post.category === activeCategory;
     return matchesSearch && matchesCategory;
   });
@@ -151,7 +202,7 @@ const Blog = () => {
                       <p className="text-gray-400 mb-6 flex-grow">
                         {post.excerpt}
                       </p>
-                      
+
                       <div className="flex items-center text-cyan-400 font-medium group-hover:translate-x-2 transition-transform">
                         Read Article <ArrowRight size={16} className="ml-2" />
                       </div>
