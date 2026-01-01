@@ -24,11 +24,12 @@ const Contact = () => {
     };
 
     emailjs.send(
-      "service_0dgkqle",
-      "template_sfuybfg",
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       params,
-      "luuh6lkVfcuscxke_"
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
+
     .then(() => {
       toast({
         title: "Message sent successfully!",
