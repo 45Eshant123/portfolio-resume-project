@@ -16,7 +16,7 @@ const AllProjects = () => {
       description: 'Interactive portfolio with Three.js and advanced animations',
       image: '/image/portfolio.png',
       color: 'cyan',
-      github: 'https://github.com/45Eshant123/port-folio.git',
+      github: 'https://github.com/45Eshant123/portfolio-resume-project.git',
       category: 'web',
       tags: ['React', 'Three.js', 'Framer Motion']
     },
