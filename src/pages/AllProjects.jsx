@@ -32,7 +32,7 @@ const AllProjects = () => {
     {
       title: 'AI Dashboard',
       description: 'Data visualization dashboard with AI insights',
-      image: '/image/cards/ai-dashboard.png',
+      image: '/image/cards/ai poered web application.png',
       color: 'blue',
       category: 'ai',
       tags: ['React', 'AI', 'Data Viz']
@@ -67,7 +67,7 @@ const AllProjects = () => {
     {
       title: 'Machine Learning Model',
       description: 'Predictive analytics model for data classification',
-      image: '/image/cards/ml-model.png',
+      image: '/image/cards/machine-learning.png',
       color: 'cyan',
       github: 'https://github.com/45Eshant123/ml-model.git',
       category: 'ai',
@@ -76,7 +76,7 @@ const AllProjects = () => {
     {
       title: 'Mobile Game',
       description: '2D platformer game with engaging gameplay mechanics',
-      image: '/image/GenAI Image Dec 2, 2025, 05_45_12 PM.png',
+      image: '/image/cards/mobile game.png',
       color: 'purple',
       github: 'https://github.com/45Eshant123/mobile-game.git',
       category: 'game',
@@ -85,7 +85,7 @@ const AllProjects = () => {
     {
       title: 'Blockchain Wallet',
       description: 'Secure cryptocurrency wallet with transaction tracking',
-      image: '/image/cards/blockchain-wallet.png',
+      image: '/image/cards/block chain.png',
       color: 'blue',
       github: 'https://github.com/45Eshant123/blockchain-wallet.git',
       category: 'blockchain',
@@ -101,8 +101,8 @@ const AllProjects = () => {
     { id: 'blockchain', label: 'Blockchain' }
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? allProjects 
+  const filteredProjects = filter === 'all'
+    ? allProjects
     : allProjects.filter(project => project.category === filter);
 
   const handleLinkClick = () => {
