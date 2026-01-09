@@ -8,12 +8,36 @@ const Skills = () => {
     { name: 'C', icon: Terminal, color: 'blue' },
     { name: 'C++', icon: Braces, color: 'blue' },
     { name: 'Java', icon: Coffee, color: 'orange' },
-    { name: 'HTML', icon: Layout, color: 'orange' },
+    { name: 'HTML5', icon: Layout, color: 'orange' },
     { name: 'CSS', icon: Palette, color: 'blue' },
     { name: 'JavaScript', icon: FileCode, color: 'yellow' },
     { name: 'React', icon: Atom, color: 'cyan' },
     { name: 'Creative Design', icon: PenTool, color: 'purple' },
+    { name: 'Express.js', icon: Atom, color: 'purple' },
+    { name: 'MongoDB', icon: Layout, color: 'purple' },
+    { name: 'Node.js', icon: Terminal, color: 'green' },
+    { name: 'Tailwind CSS', icon: Palette, color: 'cyan' },
+    { name: 'Git & GitHub', icon: FileCode, color: 'orange' },
+    { name: 'Figma', icon: PenTool, color: 'purple' },
+    { name: 'UI/UX Design', icon: PenTool, color: 'purple' },
+    { name: 'Problem Solving', icon: Braces, color: 'yellow' },
+    { name: 'Python', icon: Braces, color: 'yellow' },
+    { name: 'Opencv', icon: Atom, color: 'green' },
+    { name: 'Jquery', icon: FileCode, color: 'blue' },
+    { name: 'Bootstrap', icon: Layout, color: 'purple' },
+    { name: 'APIs', icon: Terminal, color: 'cyan' },
+    { name: 'NPM', icon: Coffee, color: 'green' },
+
   ];
+
+  const colorClasses = {
+    blue: 'bg-blue-500/20',
+    orange: 'bg-orange-500/20',
+    yellow: 'bg-yellow-500/20',
+    cyan: 'bg-cyan-500/20',
+    purple: 'bg-purple-500/20',
+    green: 'bg-green-500/20'
+  };
 
   return (
     <section id="skills" className="min-h-screen flex items-center py-20 relative bg-gradient-to-b from-slate-950 to-slate-900">
@@ -50,7 +74,7 @@ const Skills = () => {
                 <div className="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl flex flex-col items-center justify-center gap-4 min-h-[160px] group cursor-default">
                   <div className="p-4 rounded-full bg-slate-800/50 group-hover:bg-slate-700/50 transition-colors duration-300 relative">
                     <skill.icon className="w-10 h-10 text-gray-300 group-hover:text-white transition-colors duration-300" />
-                    <div className={`absolute inset-0 rounded-full blur-md bg-${skill.color}-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                    <div className={`absolute inset-0 rounded-full blur-md ${colorClasses[skill.color]} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   </div>
                   
                   <h3 className="text-xl font-bold text-gray-300 group-hover:text-white transition-colors duration-300 text-center" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>

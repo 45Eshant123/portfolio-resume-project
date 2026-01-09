@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: 'AI Dashboard',
       description: 'Data visualization dashboard with AI insights',
-      image: '/image/cards/ai-dashboard.png',
+      image: '/image/cards/ai poered web application.png',
       color: 'blue',
       // No github link provided for this one, will handle gracefully
     }
