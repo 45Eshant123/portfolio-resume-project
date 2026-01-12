@@ -90,6 +90,15 @@ const AllProjects = () => {
       github: 'https://github.com/45Eshant123/blockchain-wallet.git',
       category: 'blockchain',
       tags: ['React', 'Web3', 'Blockchain']
+    },
+    {
+      title: 'JarvisXo AI assistant',
+      description: 'AI-powered virtual assistant for productivity and automation',
+      image: '/image/cards/ai assistant.png',
+      color: 'cyan',
+      github: '',
+      category: 'ai',
+      tags: ['AI', 'NLP', 'Automation']
     }
   ];
 
