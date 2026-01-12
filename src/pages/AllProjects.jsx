@@ -96,7 +96,7 @@ const AllProjects = () => {
       description: 'AI-powered virtual assistant for productivity and automation',
       image: '/image/cards/ai assistant.png',
       color: 'cyan',
-      github: '',
+      github: 'https://github.com/45Eshant123/jarvisxo.git',
       category: 'ai',
       tags: ['AI', 'NLP', 'Automation']
     }
