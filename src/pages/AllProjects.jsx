@@ -94,7 +94,7 @@ const AllProjects = () => {
     {
       title: 'JarvisXo AI assistant',
       description: 'AI-powered virtual assistant for productivity and automation',
-      image: '/image/cards/ai assistant.png',
+      image: '/image/cards/jarvis.png',
       color: 'cyan',
       github: 'https://github.com/45Eshant123/jarvisxo.git',
       category: 'ai',
