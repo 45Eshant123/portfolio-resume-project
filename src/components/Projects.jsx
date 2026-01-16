@@ -21,7 +21,7 @@ const Projects = () => {
       title: 'E-Commerce Platform',
       description: 'Full-stack e-commerce solution with modern UI',
       image: '/image/ChatGPT Image Dec 2, 2025, 05_34_28 PM.png',
-      color: 'purple',
+      color: 'cyan',
       github: 'https://github.com/45Eshant123/E-Commerce-.git'
     },
     {

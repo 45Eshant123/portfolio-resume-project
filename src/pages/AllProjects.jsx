@@ -33,7 +33,7 @@ const AllProjects = () => {
       title: 'AI Dashboard',
       description: 'Data visualization dashboard with AI insights',
       image: '/image/cards/ai poered web application.png',
-      color: 'blue',
+      color: 'cyan',
       category: 'ai',
       tags: ['React', 'AI', 'Data Viz']
     },
