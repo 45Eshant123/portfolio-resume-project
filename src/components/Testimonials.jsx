@@ -8,22 +8,22 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Jenkins",
-      role: "CTO, TechStart",
+      name: "Sachin Kumar Gupta",
+      role: "CU-CSE, Engineering Student",
       content: "The 3D interactive elements completely transformed our user engagement metrics. Absolutely stunning work.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
-      name: "Michael Chen",
-      role: "Product Lead, InnovateLab",
+      name: "Sachin Verma",
+      role: "CU-CSE, Engineering Student",
       content: "Incredible attention to detail. The animations are buttery smooth and the performance is outstanding.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Design Director, CreativeMinds",
+      name: "Vineet Kumar",
+      role: "CU-CSE, Engineering Student",
       content: "A perfect blend of creative artistry and technical engineering. Highly recommended for premium web projects.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150"
